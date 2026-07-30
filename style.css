@@ -5,39 +5,17 @@
 }
 
 body {
-    font-family: Montserrat, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 13px;
-    padding-top: 50px;
-    background-image: url(images/product-bg.png);
-    background-repeat: no-repeat;
-    background-size: 500px 500px;
-    background-attachment: fixed;
 }
 
 .title {
     font-size: 70px;
     font-weight: 400;
     line-height: 78px;
-    width: 846px;
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
-    color: #515076;
-    margin-bottom: 40px;
-}
-.product-list {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 30px;
-    column-gap: 30px;
-    justify-content: center;
-    width: 1110px;
-    height: 1191px;
-
-    box-sizing: border-box
-
+    color: #515076
 }
 
 .product-card {
@@ -45,9 +23,6 @@ body {
     height: auto;
     padding: 25px;
     background-color: #F7F7FA;
-    box-sizing: border-box;
-
-
 }
 
 .price {
@@ -85,5 +60,3 @@ body {
 .main-text {
     color:#515076;
 }
-
-
