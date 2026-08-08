@@ -5,14 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/clear-list.css">
-    <link rel="stylesheet" href="style/compound.css">
-    <link rel="stylesheet" href="style/catalog.css">
-    <link rel="stylesheet" href="style/container.css">
-    <link rel="stylesheet" href="style/title.css">
-    <link rel="stylesheet" href="style/card.css">
-    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -20,13 +13,19 @@
     <main class="main">
         <div class="container catalog__container">
             <h1 class="title catalog__title">Выбери свой продукт</h1>
+            <div class="catalog__buttons">
+                    <button id="change-color-all-card">Сменить цвет всех карточек</button>
+                    <button id="changeFirstCard">Сменить цвет первой карточки</button>
+                    <button id="goto-google">Перейти в Гугл</button>
+                    <button id="output-console-log">Вывести предупреждение и сообщение в консоль</button>
+                    <button id="buttonChanger">Кнопка с сюрпризом</button>
+            </div>
             <ul class="products clear-list">
                 <li class="product__item card">
                     <img src="images/muss.png" alt="товар увлажняющий мусс" class="card__image" />
                     <span class="card__category">для нормальной кожи</span>
                     <h2 class="card__name">Увлажняющий мусс</h2>
                     <p class="card__description">Глубоко увлажняют кожу лица,оставляя её мягкой и гладкой.</p>
-
                     <div class="card__compound compound">
                         <span class="compound__name">Состав:</span>
                         <ul class="compound__list">
@@ -128,4 +127,6 @@
             </ul>
         </div>
     </main>
-</body>    
+    <script src="main.js"></script>
+</body> 
+</html>   

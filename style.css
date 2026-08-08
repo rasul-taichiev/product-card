@@ -8,6 +8,7 @@
 body {
     font-family: Arial, sans-serif;
     font-size: 13px;
+    color:#515076;
 }
 
 .container {
@@ -38,9 +39,6 @@ body {
     margin-bottom: 30px;
 }
 
-.card__name {
-    color: #515076;
-}
 
 .card__description {
     color: #515076;
@@ -81,12 +79,10 @@ body {
     line-height: 78px;
     margin: 0;
     text-align: center;
-    color: #515076;
     margin-bottom: 40px;
 }
 
 .compound {
-    color: #515076; 
     font-size: 13px;
     line-height: 18px;
     width: 252px;
@@ -111,9 +107,28 @@ body {
 
 .catalog__title {
     margin-top: 50px;
-    margin-bottom: 110px;
+    margin-bottom: 80px;
 }
 
+.catalog__buttons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+    background-color: whitesmoke;
+    padding: 10px 18px;
+}
 
+.catalog__buttons button{ 
+    background-color: #F7F7FA;
+    cursor: pointer;
+    border: 1px solid #A5A3B9;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+}
 
-
+.catalog__buttons button.active {
+    background-color: blue;
+}
