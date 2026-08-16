@@ -24,7 +24,7 @@ getSpeed(12983838);
 const product = "Cheaps";
 const price = 200;
 const buyProduct = (budget) => {
-    if (budget > price) {
+    if (budget >= price) {
         console.log(`${product} приобретён. Спасибо за покупку!`);
     } else {
         const lackOfMoney = price - budget;
