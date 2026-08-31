@@ -1,4 +1,4 @@
-export const userData = [
+const userData = [
   {
     postId: 1,
     id: 1,
@@ -70,39 +70,4 @@ export const userData = [
     body: "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
   }
 ]
-// 7
-const checkEmailCom = userData.filter(user => user.email.includes(".com"))
-console.log(checkEmailCom)
-// 8
-const sortPostId = userData.map(user => {
-    if(user.id <= 5){
-        user.postId = 2
-    }else if(user.id > 5){
-        user.postId = 1
-    }
-    return user
-})
-console.log(sortPostId)
-
-// 9
-
-const getMainKeys = userData.map(user => {return{name: user.name, id: user.id} })
-console.log(getMainKeys)
-
-/**10 если длина тела сообщения (body) больше 180 символов - устанавливаем true, меньше - false. */  
-
-const symbolAmountCheck = userData.map(user => {
-    return user.body.length >= 180 ? {...user, isInvalide: true} : {...user, isInvalide: false}
-})
-
-console.log(symbolAmountCheck)
-
-//number 3, exercise 1
-const emailData = userData.reduce(function(accumulator, user) {
-    accumulator.push(user.email)
-    return accumulator
-},[])
-console.log(emailData)
-// ex 2
-const emailDataWithMap = userData.map(user => user.email)
-console.log(emailDataWithMap)
+export default userData;
