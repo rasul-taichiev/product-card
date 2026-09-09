@@ -16,7 +16,7 @@ const renderOfCards = (array) => {
     array.forEach((card) => {
         const cardClone = cardTemplate.content.cloneNode(true);
         cardClone.querySelector(".card__image").src = card.image;
-        cardClone.querySelector(".card__category").textContent = card.category;
+        cardClone.querySelector(".card__image").src = `./images/${card.image}.png`;
         cardClone.querySelector(".card__name").textContent = card.cardName;
         cardClone.querySelector(".card__description").textContent =
             card.description;
