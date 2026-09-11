@@ -3,6 +3,7 @@ const cardTemplate = document.getElementById("card-template");
 const cardClearList = document.querySelector(".clear-list");
 const mainOfCard = document.querySelector(".main");
 const containerOfCard = document.querySelector(".container");
+const IMAGE_PATH = './images/'
 // 4
 const reducedCard = arrayOfCards.reduce((acc, currentValue) => {
     return (
@@ -15,8 +16,7 @@ const reducedCard = arrayOfCards.reduce((acc, currentValue) => {
 const renderOfCards = (array) => {
     array.forEach((card) => {
         const cardClone = cardTemplate.content.cloneNode(true);
-        cardClone.querySelector(".card__image").src = card.image;
-        cardClone.querySelector(".card__image").src = `./images/${card.image}.png`;
+        cardClone.querySelector(".card__image").src = `${IMAGE_PATH}${card.image}.png`;
         cardClone.querySelector(".card__name").textContent = card.cardName;
         cardClone.querySelector(".card__description").textContent =
             card.description;
@@ -24,7 +24,7 @@ const renderOfCards = (array) => {
         cardClone.querySelector(".li-2").textContent = card.li_2;
         cardClone.querySelector(".li-3").textContent = card.li_3;
         cardClone.querySelector(".card__price-value").innerHTML = card.price;
-        cardClearList.appendChild(cardClone);
+        cardClearList.appendChildа(cardClone);
     });
     console.log(cardClearList);
     containerOfCard.appendChild(cardClearList);
