@@ -138,6 +138,7 @@ body {
     flex-direction: column;
     font-size: 18px;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .footer__columns {
@@ -172,6 +173,11 @@ body {
     margin: 0;
     padding: 0;
     gap: 17px;
+}
+
+.footer__menu a {
+    color: white;
+    text-decoration: none;
 }
 
 .footer__column-last {
@@ -240,6 +246,7 @@ body {
     font-size: 14px;
     color: white;
 }
+
 
 .modal {
     position: relative;
