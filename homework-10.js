@@ -3,7 +3,7 @@ const cardTemplate = document.getElementById("card-template");
 const cardClearList = document.querySelector(".clear-list");
 const mainOfCard = document.querySelector(".main");
 const containerOfCard = document.querySelector(".container");
-const IMAGE_PATH = './images/'
+const IMAGE_PATH = "./images/";
 // 4
 const reducedCard = arrayOfCards.reduce((acc, currentValue) => {
     return (
@@ -16,7 +16,8 @@ const reducedCard = arrayOfCards.reduce((acc, currentValue) => {
 const renderOfCards = (array) => {
     array.forEach((card) => {
         const cardClone = cardTemplate.content.cloneNode(true);
-        cardClone.querySelector(".card__image").src = `${IMAGE_PATH}${card.image}.png`;
+        cardClone.querySelector(".card__image").src =
+            `${IMAGE_PATH}${card.image}.png`;
         cardClone.querySelector(".card__name").textContent = card.cardName;
         cardClone.querySelector(".card__description").textContent = card.description;
         cardClone.querySelector(".li-1").textContent = card.li_1;
@@ -36,7 +37,6 @@ const askNumber = () => {
         return answer;
     } else {
         alert("Введите число только от 1 до 5!");
-        return askNumber();
     }
 };
 // result
