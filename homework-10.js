@@ -19,8 +19,7 @@ const renderOfCards = (array) => {
         cardClone.querySelector(".card__image").src =
             `${IMAGE_PATH}${card.image}.png`;
         cardClone.querySelector(".card__name").textContent = card.cardName;
-        cardClone.querySelector(".card__description").textContent =
-            card.description;
+        cardClone.querySelector(".card__description").textContent = card.description;
         cardClone.querySelector(".li-1").textContent = card.li_1;
         cardClone.querySelector(".li-2").textContent = card.li_2;
         cardClone.querySelector(".li-3").textContent = card.li_3;
