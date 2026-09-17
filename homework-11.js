@@ -4,9 +4,6 @@ const userPassword = document.querySelector(".registration__password");
 const userPasswordConfirm = document.querySelector(
     ".registration__password-confirm",
 );
-const submitRegistration = document.querySelector(".registration__submit");
-const overLay = document.querySelector(".overLay");
-let user = null;
 
 emailForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -28,11 +25,4 @@ registrationForm.addEventListener("submit", (event) => {
     } else {
         userPasswordConfirm.setCustomValidity("");
     }
-    const form = event.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    data.createdOn = new Date().toLocaleString();
-    console.log(data);
-    user = data;
-    document.querySelector(".overlay").classList.remove("active");
 });
