@@ -12,13 +12,14 @@ III. Для сброса значений формы.
 let user = null;
 
 class Form {
+    
+
     constructor(formID){
-        this.formID = formID;
+        this.form = document.getElementById(formID);
     }
 
     getFormData () {
-        const form = document.getElementById(this.formID)
-        form.addEventListener("submit", (event) => {
+        this.form.addEventListener("submit", (event) => {
             event.preventDefault()
             if(!this.checkValidityForm()) {
                 console.log("Форма заполнена с ошибками!")
@@ -34,14 +35,12 @@ class Form {
         })
     }
     checkValidityForm () {
-        const form = document.getElementById(this.formID)
-        console.log(form.checkValidity())
-        return form.checkValidity()
+        console.log(this.form.checkValidity())
+        return this.form.checkValidity()
     }
 
     resetFormValue () {
-        const form = document.getElementById(this.formID)
-        form.reset()
+        this.form.reset()
     }
 
 }
