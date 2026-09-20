@@ -1,9 +1,6 @@
+import { Form } from './Form.js';
 const emailForm = document.getElementById("footer__submit-form");
-const registrationForm = document.getElementById("registration__submit-form");
-const userPassword = document.querySelector(".registration__password");
-const userPasswordConfirm = document.querySelector(
-    ".registration__password-confirm",
-);
+const form = new Form ("registration__submit-form")
 
 emailForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -13,16 +10,6 @@ emailForm.addEventListener("submit", (event) => {
     console.log(data);
 });
 
-userPasswordConfirm.addEventListener("input", () => {
-    userPasswordConfirm.setCustomValidity("");
-});
+form.getFormData()
+form.checkValidityForm()
 
-registrationForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (userPasswordConfirm.value !== userPassword.value) {
-        userPasswordConfirm.setCustomValidity("Пароли не совпадают");
-        return
-    } else {
-        userPasswordConfirm.setCustomValidity("");
-    }
-});

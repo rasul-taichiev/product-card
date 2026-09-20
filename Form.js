@@ -11,16 +11,29 @@ III. Для сброса значений формы.
 мы можем управлять через айди формы получением значений и всем, что должна делать модалка. */
 let user = null;
 
-class Form {
+export class Form {
     
 
     constructor(formID){
-        this.form = document.getElementById(formID);
+        this.form = document.getElementById(formID)
     }
 
     getFormData () {
         this.form.addEventListener("submit", (event) => {
             event.preventDefault()
+            const userPassword = document.querySelector(".registration__password")
+            const userPasswordConfirm = document.querySelector(
+                ".registration__password-confirm",
+                )
+            userPasswordConfirm.addEventListener("input", () => {
+                userPasswordConfirm.setCustomValidity("");
+            });
+            if (userPasswordConfirm.value !== userPassword.value) {
+                userPasswordConfirm.setCustomValidity("Пароли не совпадают");
+                return
+            } else {
+                userPasswordConfirm.setCustomValidity("");
+            }
             if(!this.checkValidityForm()) {
                 console.log("Форма заполнена с ошибками!")
                 return
@@ -45,9 +58,7 @@ class Form {
 
 }
    
-const form = new Form ("registration__submit-form")
-form.getFormData()
-form.checkValidityForm()
+
 
 
 
