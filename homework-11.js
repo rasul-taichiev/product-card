@@ -1,6 +1,12 @@
 import { Form } from './Form.js';
+import { Modal } from './Modal.js';
 const emailForm = document.getElementById("footer__submit-form");
-const form = new Form ("registration__submit-form")
+const registrationForm = new Form ("registration__submit-form")
+const modalElement = document.getElementById('modalWindow')
+const modalOpen = document.getElementById('footer__button-open')
+const modalClose = document.getElementById('footer__button-close')
+const overlay = document.querySelector('.overlay')
+const modalWindow = new Modal(modalElement)
 
 emailForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -10,6 +16,24 @@ emailForm.addEventListener("submit", (event) => {
     console.log(data);
 });
 
-form.getFormData()
-form.checkValidityForm()
+registrationForm.submitForm()
 
+if(modalOpen){
+    modalOpen.addEventListener('click', () => {
+        modalWindow.open()
+    })
+} 
+
+if(modalClose){
+    modalClose.addEventListener('click', () => {
+        modalWindow.close()
+    })
+}
+
+if(overlay){
+    overlay.addEventListener('click', (event) => {
+        if(event.target === overlay){
+        modalWindow.close()
+        }
+    })
+}

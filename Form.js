@@ -9,46 +9,52 @@ III. Для сброса значений формы.
 
 Используя данный класс - переписать логику задания №9, связанной с формами. Как? Используя внутренние методы - 
 мы можем управлять через айди формы получением значений и всем, что должна делать модалка. */
-let user = null;
 
 export class Form {
     
-
     constructor(formID){
         this.form = document.getElementById(formID)
+        let user = null
     }
 
     getFormData () {
+        const formData = new FormData(this.form)
+        const data = Object.fromEntries(formData)
+        data.createdOn = new Date().toLocaleString()
+        console.log(data)
+        this.user = data
+    }
+
+    submitForm () {
         this.form.addEventListener("submit", (event) => {
             event.preventDefault()
-            const userPassword = document.querySelector(".registration__password")
-            const userPasswordConfirm = document.querySelector(
-                ".registration__password-confirm",
-                )
-            userPasswordConfirm.addEventListener("input", () => {
-                userPasswordConfirm.setCustomValidity("");
-            });
-            if (userPasswordConfirm.value !== userPassword.value) {
-                userPasswordConfirm.setCustomValidity("Пароли не совпадают");
-                return
-            } else {
-                userPasswordConfirm.setCustomValidity("");
-            }
+            this.isValid()
             if(!this.checkValidityForm()) {
                 console.log("Форма заполнена с ошибками!")
                 return
             }
-            const form = event.target
-            const formData = new FormData(form)
-            const data = Object.fromEntries(formData)
-            data.createdOn = new Date().toLocaleString()
-            console.log(data)
-            this.user = data
+            this.getFormData()
             this.resetFormValue()
-        })
+            }
+        )}
+
+    isValid () {
+        const userPassword = document.querySelector(".registration__password")
+        const userPasswordConfirm = document.querySelector(
+            ".registration__password-confirm",
+            )
+        userPasswordConfirm.addEventListener("input", () => {
+            userPasswordConfirm.setCustomValidity("");
+        });
+        if (userPasswordConfirm.value !== userPassword.value) {
+            userPasswordConfirm.setCustomValidity("Пароли не совпадают");
+            return
+        } else {
+            userPasswordConfirm.setCustomValidity("");
+        }
     }
+
     checkValidityForm () {
-        console.log(this.form.checkValidity())
         return this.form.checkValidity()
     }
 
