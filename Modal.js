@@ -16,7 +16,7 @@ IV. Метод, который слушает кнопку (крестик)
 const isModalOpen = false;
 class Modal {
     constructor(modalID){
-        this.modalID = document.getElementById(modalID);
+        this.modal = document.getElementById(modalID);
         const modalOpen = document.getElementById('footer__button-open')
         const modalClose = document.getElementById('footer__button-close')
         const overlay = document.querySelector('.overlay')
