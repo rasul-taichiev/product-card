@@ -40,7 +40,7 @@ class Modal {
     open () {
         this.modalID.classList.add('active')
         this.isModalOpen = true;
-        (console.log("Модульное окно открыто."))
+        console.log("Модульное окно открыто.")
     }
 
     close () {
