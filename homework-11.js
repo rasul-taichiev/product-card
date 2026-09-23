@@ -1,12 +1,12 @@
+import { Form } from './Form.js';
+import { Modal } from './Modal.js';
 const emailForm = document.getElementById("footer__submit-form");
-const registrationForm = document.getElementById("registration__submit-form");
-const userPassword = document.querySelector(".registration__password");
-const userPasswordConfirm = document.querySelector(
-    ".registration__password-confirm",
-);
-const submitRegistration = document.querySelector(".registration__submit");
-const overLay = document.querySelector(".overLay");
-let user = null;
+const registrationForm = new Form ("registration__submit-form")
+const modalElement = document.getElementById('modalWindow')
+const modalOpen = document.getElementById('footer__button-open')
+const modalClose = document.getElementById('footer__button-close')
+const overlay = document.querySelector('.overlay')
+const modalWindow = new Modal(modalElement)
 
 emailForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -16,23 +16,24 @@ emailForm.addEventListener("submit", (event) => {
     console.log(data);
 });
 
-userPasswordConfirm.addEventListener("input", () => {
-    userPasswordConfirm.setCustomValidity("");
-});
+registrationForm.submitForm()
 
-registrationForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (userPasswordConfirm.value !== userPassword.value) {
-        userPasswordConfirm.setCustomValidity("Пароли не совпадают");
-        return
-    } else {
-        userPasswordConfirm.setCustomValidity("");
-    }
-    const form = event.target;
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
-    data.createdOn = new Date().toLocaleString();
-    console.log(data);
-    user = data;
-    document.querySelector(".overlay").classList.remove("active");
-});
+if(modalOpen){
+    modalOpen.addEventListener('click', () => {
+        modalWindow.open()
+    })
+} 
+
+if(modalClose){
+    modalClose.addEventListener('click', () => {
+        modalWindow.close()
+    })
+}
+
+if(overlay){
+    overlay.addEventListener('click', (event) => {
+        if(event.target === overlay){
+        modalWindow.close()
+        }
+    })
+}

@@ -1,7 +1,19 @@
+import "./homework-7.js";
+import "./homework-8.js";
+import "./homework-9.js";
+import "./homework-10.js";
+import "./homework-11.js";
+import "./homework-12.js";
+import "./comments.js";
+import "./productCards.js";
+import "./Modal.js";
+import "./Form.js";
+
+
 //1
 const productCards = document.querySelectorAll(".card");
 const changeColorAllCard = document.querySelector("#change-color-all-card");
-const darkGreenColorHash = "#006400";
+const darkGreenColorHash = "#21eb21";
 const redColorRGB = "rgb(139, 0, 0)";
 
 changeColorAllCard.addEventListener("click", () => {
@@ -58,3 +70,5 @@ const changeColorLastButton = document.querySelector("#buttonChanger");
 changeColorLastButton.addEventListener("click", () => {
     changeColorLastButton.classList.toggle("active");
 });
+
+
