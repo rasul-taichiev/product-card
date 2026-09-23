@@ -114,7 +114,7 @@ class Cafe {
     }
 }
 
-const cafe = new Cafe ("DaDa", "Bishkek")
+const cafe = new Cafe ("CoffeeFree", "Bishkek")
 const bubbleTea = new BubbleTea ("Americano","Medium",100,65,"CowMilk")
 cafe.getCafeInfo()
 cafe.orderDrink(bubbleTea)

@@ -4,10 +4,12 @@ import "./homework-9.js";
 import "./homework-10.js";
 import "./homework-11.js";
 import "./homework-12.js";
+import "./homework-13.js";
 import "./comments.js";
 import "./productCards.js";
 import "./Modal.js";
 import "./Form.js";
+import { Drink,Cafe } from './Modal.js';
 
 
 //1
