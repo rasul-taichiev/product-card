@@ -1,10 +1,9 @@
 class Drink {
     #temperature;
-    constructor(name,size,price,temperature){
+    constructor(name,size,price){
         this.name = name
         this.size = size
         this.price = price
-        this.#temperature = temperature
     }
 
     getDrinkInfo () {
@@ -13,9 +12,17 @@ class Drink {
     getDrinkTemperature () {
         console.log(`Температура напитка: ${this.#temperature}`)
     }
+    setTemperature (temperature) {
+        if(temperature >= 0 && temperature <=100) {
+            this.#temperature = temperature
+        } else {
+            console.log("Вы указали нереальную температуру")
+        }
+    }
 
-    #controlTemperature () {
+    #controlTemperature (temperature) {
         console.log("Начинаю проверку температуры напитка.")
+        this.#temperature = temperature;
         if(this.#temperature < 15) {
             console.log("Вода ниже 15 градусов, человек может заболеть, по правилам нужно повысить, т.к вкус не поменяется.")
             this.#temperature =  20
@@ -32,13 +39,13 @@ class Drink {
         console.log(`Вы выбрали хорошую температуры напитка.`)
     }
 
-    #makeDrink () {
+    #makeDrink (temperature) {
         console.log("Стакан поставлен, собираю все нужные ингридиенты.")
-        this.#controlTemperature()
+        this.#controlTemperature(temperature)
     }
 
-    serveDrink () {
-        this.#makeDrink()
+    serveDrink (temperature) {
+        this.#makeDrink(temperature)
         console.log("Ваш напиток готов, Держите.")
     }
 
@@ -51,8 +58,8 @@ class Drink {
 
 
 class BubbleTea extends Drink {
-    constructor(name,size,price,temperature,typeOfMilk){
-        super(name,size,price,temperature)
+    constructor(name,size,price,typeOfMilk){
+        super(name,size,price)
         this.typeOfMilk = typeOfMilk
     } 
 
@@ -63,8 +70,8 @@ class BubbleTea extends Drink {
 }
 
 class Tea extends Drink {
-    constructor(name,size,price,temperature,teaProduction){
-        super(name,size,price,temperature)
+    constructor(name,size,price,teaProduction){
+        super(name,size,price)
         this.teaProduction = teaProduction
     } 
 
@@ -75,8 +82,8 @@ class Tea extends Drink {
 }
 
 class Coffee extends Drink {
-    constructor(name,size,price,temperature,typeOfBean){
-        super(name,size,price,temperature)
+    constructor(name,size,price,typeOfBean){
+        super(name,size,price)
         this.typeOfBean = typeOfBean
     }
     
@@ -87,8 +94,8 @@ class Coffee extends Drink {
 }
 
 class Milk extends Drink {
-    constructor(name,size,price,temperature,milkFat){
-        super(name,size,price,temperature)
+    constructor(name,size,price,milkFat){
+        super(name,size,price)
         this.milkFat = milkFat
     }
     
@@ -110,11 +117,11 @@ class Cafe {
     }
 
     orderDrink (drink) {
-        drink.serveDrink()
+        drink.serveDrink(65)
     }
 }
 
 const cafe = new Cafe ("CoffeeFree", "Bishkek")
-const bubbleTea = new BubbleTea ("Americano","Medium",100,65,"CowMilk")
+const bubbleTea = new BubbleTea ("Americano","Medium",100,"CowMilk")
 cafe.getCafeInfo()
 cafe.orderDrink(bubbleTea)

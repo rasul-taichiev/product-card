@@ -1,7 +1,7 @@
 const isModalOpen = false;
 export class Modal {
     constructor(id){
-        this.modal = id;   
+        this.modal = document.getElementById(id);   
         const isModalOpen = false; 
     }
     open () {

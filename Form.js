@@ -2,7 +2,6 @@ export class Form {
     
     constructor(formID){
         this.form = document.getElementById(formID)
-        let user = null
     }
 
     getFormData () {
@@ -10,7 +9,7 @@ export class Form {
         const data = Object.fromEntries(formData)
         data.createdOn = new Date().toLocaleString()
         console.log(data)
-        this.user = data
+        return(data)
     }
 
     submitForm () {

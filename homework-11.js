@@ -2,11 +2,10 @@ import { Form } from './Form.js';
 import { Modal } from './Modal.js';
 const emailForm = document.getElementById("footer__submit-form");
 const registrationForm = new Form ("registration__submit-form")
-const modalElement = document.getElementById('modalWindow')
 const modalOpen = document.getElementById('footer__button-open')
 const modalClose = document.getElementById('footer__button-close')
 const overlay = document.querySelector('.overlay')
-const modalWindow = new Modal(modalElement)
+const modalWindow = new Modal('modalWindow')
 
 emailForm.addEventListener("submit", (event) => {
     event.preventDefault();
