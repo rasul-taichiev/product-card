@@ -1,11 +1,11 @@
-import { Form } from './Form.js';
-import { Modal } from './Modal.js';
+import { Form } from "./Form.js";
+import { Modal } from "./Modal.js";
 const emailForm = document.getElementById("footer__submit-form");
-const registrationForm = new Form ("registration__submit-form")
-const modalOpen = document.getElementById('footer__button-open')
-const modalClose = document.getElementById('footer__button-close')
-const overlay = document.querySelector('.overlay')
-const modalWindow = new Modal('modalWindow')
+const registrationForm = new Form("registration__submit-form");
+const modalOpen = document.getElementById("footer__button-open");
+const modalClose = document.getElementById("footer__button-close");
+const overlay = document.querySelector(".overlay");
+const modalWindow = new Modal("modalWindow");
 
 emailForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -15,24 +15,24 @@ emailForm.addEventListener("submit", (event) => {
     console.log(data);
 });
 
-registrationForm.submitForm()
+registrationForm.submitForm();
 
-if(modalOpen){
-    modalOpen.addEventListener('click', () => {
-        modalWindow.open()
-    })
-} 
-
-if(modalClose){
-    modalClose.addEventListener('click', () => {
-        modalWindow.close()
-    })
+if (modalOpen) {
+    modalOpen.addEventListener("click", () => {
+        modalWindow.open();
+    });
 }
 
-if(overlay){
-    overlay.addEventListener('click', (event) => {
-        if(event.target === overlay){
-        modalWindow.close()
+if (modalClose) {
+    modalClose.addEventListener("click", () => {
+        modalWindow.close();
+    });
+}
+
+if (overlay) {
+    overlay.addEventListener("click", (event) => {
+        if (event.target === overlay) {
+            modalWindow.close();
         }
-    })
+    });
 }
