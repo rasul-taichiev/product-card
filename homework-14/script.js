@@ -3,6 +3,6 @@ import { Modal } from "./Modal.js";
 const registrationModal = new Modal(
     "registration-modal",
     "registration-button",
-    false,
+    true,
 );
-const authModal = new Modal("auth-modal", "auth-button", true);
+const authModal = new Modal("auth-modal", "auth-button", false);
