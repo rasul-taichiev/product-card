@@ -23,7 +23,7 @@ body {
     box-sizing: border-box;
 }
 
-.products__item {
+.product__item {
     width: 340px;
 }
 
