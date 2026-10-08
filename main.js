@@ -9,7 +9,6 @@ import "./comments.js";
 import "./productCards.js";
 import "./Modal.js";
 import "./Form.js";
-import { Drink, Cafe } from "./Modal.js";
 
 //1
 const productCards = document.querySelectorAll(".card");
