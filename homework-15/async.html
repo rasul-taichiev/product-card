@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Загрузка данных</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="storage-info" class="storage-info"></div>
+    <main class = "main">
+        <div class="catalog__container" id="catalog__container">
+            <div class="catalog__buttons">
+                <button id="show-all-cards-btn">
+                    Показать все карточки
+                </button>
+                <button id="remove-all-cards-btn">
+                    Удалить все карточки
+                </button>
+                <button id="remove-card-btn">
+                    Удалить одну карточку
+                </button>
+            </div>
+            <div class="products clear-list"></div>
+        </div>
+    </main>
+
+    <template id="card-template">
+        <ul class = "product__item">
+            <li class="card__id"></li>
+            <li class="card__name"></li>
+            <li class="card__surname"></li>
+            <li class="card__email"></li>
+            <li class="card__age"></li>
+        </ul>
+    </template>
+    
+    <script type="module" src="async.js"></script>
+
+    </div>
+</body>
+</html>
+
