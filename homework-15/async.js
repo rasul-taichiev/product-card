@@ -5,7 +5,6 @@ const removeCardBtn = document.getElementById("remove-card-btn");
 const cardTemplate = document.getElementById("card-template");
 const cardClearList = document.querySelector(".clear-list");
 
-localStorage.removeItem("users");
 async function getUsers() {
     try {
         const result = await new Promise((resolve, reject) => {
@@ -45,18 +44,15 @@ const renderCards = (users) => {
     });
 };
 
-const cardsValidate = () => {
-    if (cardClearList.innerHTML !== "") {
-        return false;
-    } else {
-        return true;
-    }
-};
+const doesUsersExist = () => !!localStorage.getItem("users")
 
 showAllCardsBtn.addEventListener("click", async () => {
-    if (cardsValidate()) {
+    if (!doesUsersExist()) {
         const users = await getUsers();
         renderCards(users);
+    } else {
+        const usersFromLS = JSON.parse(localStorage.getItem("users"))
+        renderCards(usersFromLS)
     }
 });
 
@@ -64,7 +60,7 @@ removeAllCardsBtn.addEventListener("click", () => {
     cardClearList.innerHTML = "";
 });
 
-const removeCard = () => {
+const getUserId = () => {
     const answer = Number(prompt("Какую карточку вы хотите удалить?"));
     if (answer >= 1 && answer <= 5) {
         return answer;
@@ -74,11 +70,11 @@ const removeCard = () => {
 };
 
 removeCardBtn.addEventListener("click", async () => {
-    const idCard = removeCard();
+    const idCard = getUserId();
     if (idCard !== undefined) {
-        let v = JSON.parse(localStorage.getItem("users"));
-        let vv = v.filter((users) => users.id !== idCard);
-        localStorage.setItem("users", JSON.stringify(vv));
-        renderCards(vv);
+        let usersFromLS = JSON.parse(localStorage.getItem("users"));
+        let filterUsersFromLS = usersFromLS.filter((users) => users.id !== idCard);
+        localStorage.setItem("users", JSON.stringify(filterUsersFromLS));
+        renderCards(filterUsersFromLS);
     }
 });
